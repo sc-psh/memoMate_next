@@ -12,6 +12,10 @@ export default async function Header() {
         <div>
           {userId ? (
             <div className='flex gap-4 items-center'>
+              <Link href='/memolist'>MemoList</Link>
+              <Link href='/memowrite'>MemoWrite</Link>
+              <Link href='/memo-detail'>MemoDetail</Link>
+              <Link href='/mypage'>MyPage</Link>
               <Link href='/dashboard'>Dashboard</Link>
               <UserButton afterSignOutUrl='/' />
             </div>

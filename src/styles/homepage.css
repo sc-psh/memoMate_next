@@ -1,0 +1,18 @@
+.homepage-container {
+    background-image: url('../asset/image/home_back_img.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* 화면 전체 높이 */
+  }
+  
+.welcome-text {
+    color: rgb(199, 1, 249); /* 글자색을 화이트로 설정 */
+    font-size: 5rem; /* 글자 크기를 2.5rem(40px)로 설정 */
+    font-family: 'Montserrat', sans-serif; /* Montserrat 폰트 적용 */
+}
+
+.welcome2-text {
+    color: rgb(244, 244, 244); /* 글자색을 화이트로 설정 */
+    font-size: 2rem; /* 글자 크기를 2.5rem(40px)로 설정 */
+    font-family: 'Montserrat', sans-serif; /* Montserrat 폰트 적용 */
+}
