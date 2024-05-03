@@ -19,7 +19,7 @@ npm install
 ## 사용 방법
 
 1. 프로젝트 디렉토리로 이동합니다.
-cd MEMOMATE
+cd MEMOMATE_NEXT
 
 2. 애플리케이션을 실행합니다.
 1) node.js 서버 실행

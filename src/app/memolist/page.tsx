@@ -33,13 +33,14 @@ const MemoListPage = () => {
 
   return (
     <Container className="py-4">
-      <h2 className="mb-4">My Memo Blog</h2>
+      <h2 className="mb-4">My Memo</h2>
       {memos.map((memo: Memo, index: number) => (
         <div key={memo.id} className="memo-post">
           <Card className="mb-3">
             <Card.Body>
               <h3 className="post-title">제목 : {memo.title}</h3>
-              <p className="post-content">{memo.content}</p>
+              <p className="post-content">내용 : {memo.content}</p>
+              <br/>
               <Link href={`/memo-detail/${memo.id}`}>
                 <Button variant="primary">자세히 보기</Button>
               </Link>
