@@ -15,7 +15,7 @@ const MemoListPage = () => {
 
   useEffect(() => {
     console.log('Fetching memos...');
-    fetch("http://localhost:3000/api/memos")
+    fetch("http://localhost:5000/api/memos")
       .then((response) => {
         console.log('response memos:', response);
         return response.json();
@@ -32,26 +32,35 @@ const MemoListPage = () => {
   };
 
   return (
-    <>
-      <Container className="py-4">
-        <h2 className="mb-4">My Memo List</h2>
-        {memos.map((memo: Memo) => (
-          <Card
-            key={memo.id}
-            className="mb-3"
-            onClick={() => handleMemoClick(memo.id)}
-          >
+    <Container className="py-4">
+      <h2 className="mb-4">My Memo Blog</h2>
+      {memos.map((memo: Memo, index: number) => (
+        <div key={memo.id} className="memo-post">
+          <Card className="mb-3">
             <Card.Body>
-              <Card.Title>{memo.title}</Card.Title>
-              <Card.Text>{memo.content}</Card.Text>
+              <h3 className="post-title">제목 : {memo.title}</h3>
+              <p className="post-content">{memo.content}</p>
               <Link href={`/memo-detail/${memo.id}`}>
                 <Button variant="primary">자세히 보기</Button>
               </Link>
             </Card.Body>
           </Card>
-        ))}
-      </Container>
-    </>
+          {index !== memos.length - 1 && <hr />} {/* 마지막 메모가 아닐 경우에만 구분선 추가 */}
+        </div>
+      ))}
+      <style jsx>{`
+        .memo-post {
+          margin-bottom: 30px;
+        }
+        .post-title {
+          font-size: 24px;
+          margin-bottom: 10px;
+        }
+        .post-content {
+          line-height: 1.6;
+        }
+      `}</style>
+    </Container>
   );
 };
 
